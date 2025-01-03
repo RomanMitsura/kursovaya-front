@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": "baa5",
+      "username": "Roman",
+      "email": "roman.mitsura@gmail.com",
+      "password": "62m49r50i",
+      "profileImage": "https://avatars.mds.yandex.net/i?id=31914ef6cb9d53d7a533bcde5a1f1b54e9dc4ef9-10753427-images-thumbs&n=13"
+    },
+    {
+      "id": "ce2d",
+      "username": "1234",
+      "email": "1234",
+      "password": "1234",
+      "profileImage": "https://avatars.mds.yandex.net/i?id=b5c9ba6179133899aa78d2a00319eb4519c00d37-13223322-images-thumbs&n=13"
+    },
+    {
+      "id": "f26d",
+      "username": "Иван",
+      "email": "123",
+      "password": "123",
+      "profileImage": "https://avatars.mds.yandex.net/i?id=c57884fcb6313c0c5f9103ac97c18f66_l-8310551-images-thumbs&n=13"
+    }
+  ],
+  "videos": [
+    {
+      "id": "1",
+      "title": "Моё первое видео",
+      "description": "Описание видео",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=1cf04a6f38f0be15415a0c35010d27a3eb59c5c5-7942200-images-thumbs&n=13",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "userId": "ce2d",
+      "comments": []
+    },
+    {
+      "id": "276d",
+      "title": "Мое второе видео",
+      "description": "пурипури",
+      "thumbnail": "https://avatars.mds.yandex.net/i?id=72d80514cc4b68a228ed626f0031dfa9-4344700-images-thumbs&n=13",
+      "videoUrl": "https://youtu.be/jNQXAC9IVRw",
+      "comments": [
+        {
+          "text": "Крутое видео!",
+          "username": "Roman1",
+          "profileImage": "https://avatars.mds.yandex.net/i?id=31914ef6cb9d53d7a533bcde5a1f1b54e9dc4ef9-10753427-images-thumbs&n=13"
+        },
+        {
+          "text": "Плохое видео",
+          "username": "Roman1",
+          "profileImage": "https://avatars.mds.yandex.net/i?id=31914ef6cb9d53d7a533bcde5a1f1b54e9dc4ef9-10753427-images-thumbs&n=13"
+        }
+      ],
+      "userId": "ce2d"
+    },
+    {
+      "id": "8b57",
+      "title": "Видео ромы",
+      "description": "Это ромино видео",
+      "thumbnail": "https://i.pinimg.com/originals/28/06/b2/2806b25b863aa77b57e7832f70119caf.jpg",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "comments": [
+        {
+          "text": "Круто",
+          "username": "Иван",
+          "profileImage": "https://avatars.mds.yandex.net/i?id=c57884fcb6313c0c5f9103ac97c18f66_l-8310551-images-thumbs&n=13"
+        }
+      ],
+      "userId": "baa5"
+    }
+  ]
+}
