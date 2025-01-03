@@ -55,7 +55,9 @@ export default function Profile2() {
     }
 
     // Проверка уникальности имени пользователя и почты
-    const usersResponse = await fetch("http://localhost:5000/users");
+    const usersResponse = await fetch(
+      "https://json-server-repo.onrender.com/users"
+    );
     const users = await usersResponse.json();
 
     const usernameExists = users.some(
@@ -85,7 +87,7 @@ export default function Profile2() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/users/${currentUser.id}`,
+        `https://json-server-repo.onrender.com/users/${currentUser.id}`,
         {
           method: "PUT",
           headers: {
