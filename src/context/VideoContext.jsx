@@ -1,7 +1,8 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 
-const API_URL = "https://json-server-repo.onrender.com/videos";
+// const API_URL = "https://json-server-repo.onrender.com/videos";
+const URL_LOCAL = "https://json-server-repo.onrender.com/videos";
 
 const VideoContext = createContext();
 
@@ -12,7 +13,7 @@ export const VideoProvider = ({ children }) => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(URL_LOCAL);
         const data = await response.json();
         setVideos(data);
       } catch (error) {
@@ -32,7 +33,7 @@ export const VideoProvider = ({ children }) => {
     };
 
     try {
-      const response = await fetch(`${API_URL}/${videoId}`, {
+      const response = await fetch(`${URL_LOCAL}/${videoId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +65,7 @@ export const VideoProvider = ({ children }) => {
     try {
       const videoWithUser = { ...videoData, userId: currentUser.id };
 
-      const response = await fetch(API_URL, {
+      const response = await fetch(URL_LOCAL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

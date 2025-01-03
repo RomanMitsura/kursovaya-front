@@ -56,7 +56,7 @@ export default function VideoPage() {
           />
         </svg>
       </Link>
-      <div className="text-white flex flex-col py-6 max-w-3xl w-full">
+      <div className="text-white flex flex-col py-6 max-w-3xl w-full mt-10 md:mt-10">
         <div>
           <video className="w-full" controls>
             <source src={video.videoUrl} type="video/mp4" />

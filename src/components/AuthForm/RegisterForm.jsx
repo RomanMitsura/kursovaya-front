@@ -8,6 +8,7 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const URL = "https://json-server-repo.onrender.com";
 
   // Функция для обработки регистрации
   const handleRegister = () => {
@@ -17,7 +18,7 @@ export default function RegisterForm() {
       return;
     }
 
-    fetch("http://localhost:5000/users")
+    fetch(`${URL}/users`)
       .then((res) => res.json())
       .then((users) => {
         // Проверяем, существует ли уже такой пользователь
@@ -34,7 +35,7 @@ export default function RegisterForm() {
         const newUser = { username, email, password };
 
         // Отправляем нового пользователя на сервер (в db.json)
-        fetch("http://localhost:5000/users", {
+        fetch(`${URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

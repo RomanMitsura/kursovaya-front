@@ -12,11 +12,11 @@ export default function Header() {
   };
 
   return (
-    <div className="flex justify-between py-6">
+    <div className="flex justify-between py-6 items-center">
       <Link to={"/"}>
-        <span className="bg-blue-500 p-2">logo</span>
+        <span className="bg-blue-500 p-2 hidden sm:block">logo</span>
       </Link>
-      <div className="group flex items-center">
+      <div className="group flex items-center pl-20 sm:pl-7">
         <input
           className="text-white all:unset border border-r-0 border-gray-400 focus:outline-none focus:border-blue-400 bg-neutral-900 px-3 py-2 rounded-l-md"
           type="text"

@@ -10,7 +10,9 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const URL = "https://json-server-repo.onrender.com";
+  // const URL = "https://json-server-repo.onrender.com";
+  const URL_LOCAL = "https://json-server-repo.onrender.com";
+
   useEffect(() => {
     // При загрузке страницы восстанавливаем данные пользователя из localStorage
     const storedUser = localStorage.getItem("user");
@@ -21,7 +23,7 @@ export const AuthProvider = ({ children }) => {
     // Загрузка всех пользователей при монтировании
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`${URL}/users`);
+        const response = await fetch(`${URL_LOCAL}/users`);
         const usersData = await response.json();
         setUsers(usersData); // Сохраняем всех пользователей
       } catch (err) {

@@ -30,7 +30,7 @@ export default function VideoCard({ video }) {
   }
 
   return (
-    <div className=" rounded-lg rounded-b-none hover:border-b hover:shadow-white overflow-hidden">
+    <div className="max-w-[500px] min-w-[300px] rounded-lg rounded-b-none hover:border-b hover:shadow-white overflow-hidden">
       <img
         className="w-full h-48 object-cover"
         src={video.thumbnail}
