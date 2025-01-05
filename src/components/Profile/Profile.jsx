@@ -14,6 +14,8 @@ export default function Profile2() {
   const [error, setError] = useState(null); // Для отображения ошибок
   const navigate = useNavigate();
   const { id } = useParams(); // Получаем ID пользователя из URL
+  // const URL = "https://json-server-repo.onrender.com";
+  const URL = "http://localhost:3000";
 
   useEffect(() => {
     // Проверка на наличие currentUser
@@ -53,11 +55,8 @@ export default function Profile2() {
       setErrorMessage("Пользователь не найден.");
       return;
     }
-
     // Проверка уникальности имени пользователя и почты
-    const usersResponse = await fetch(
-      "https://json-server-repo.onrender.com/users"
-    );
+    const usersResponse = await fetch(`${URL}/users`);
     const users = await usersResponse.json();
 
     const usernameExists = users.some(
@@ -86,16 +85,13 @@ export default function Profile2() {
     };
 
     try {
-      const response = await fetch(
-        `https://json-server-repo.onrender.com/users/${currentUser.id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedUser),
-        }
-      );
+      const response = await fetch(`${URL}/users/${currentUser.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
+      });
 
       if (response.ok) {
         const updatedUserData = await response.json();
@@ -115,7 +111,7 @@ export default function Profile2() {
         <div className="pt-6 relative">
           {currentUser ? (
             <div className="flex flex-col gap-4 items-center text-white text-center">
-              <Link to={"/"} className="absolute top-0 left-0 p-4 text-white">
+              <Link to={"/"} className="absolute top-4 left-0 p-4 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -132,7 +128,7 @@ export default function Profile2() {
                 </svg>
               </Link>
               {currentUser.id === id ? (
-                <div className="absolute top-0 right-0 p-4 text-white">
+                <div className="absolute top-4 right-0 p-4 text-white">
                   <button
                     onClick={handleLogout}
                     className="px-3 py-2 bg-gray-800 rounded hover:bg-neutral-800 active:bg-neutral-700"

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   // const URL = "https://json-server-repo.onrender.com";
-  const URL_LOCAL = "https://json-server-repo.onrender.com";
+  const URL_LOCAL = "http://localhost:3000";
 
   useEffect(() => {
     // При загрузке страницы восстанавливаем данные пользователя из localStorage

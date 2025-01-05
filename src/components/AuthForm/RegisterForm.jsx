@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext"; // Импортируем useAuth для получения функции login
 
 export default function RegisterForm() {
   const navigate = useNavigate();
+  const { login } = useAuth(); // Используем функцию login из контекста
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const URL = "https://json-server-repo.onrender.com";
+  const URL = "http://localhost:3000";
 
   // Функция для обработки регистрации
   const handleRegister = () => {
@@ -43,31 +44,26 @@ export default function RegisterForm() {
           body: JSON.stringify(newUser),
         })
           .then((res) => res.json())
-          .then(() => {
-            // Перенаправляем на страницу входа после успешной регистрации
-            navigate("/login");
+          .then((newUserData) => {
+            // Логиним нового пользователя сразу после его создания
+            login(newUserData.username, newUserData.password); // Используем login для авторизации
+
+            // Перенаправляем на страницу профиля или главную страницу
+            navigate(`/profile/${newUserData.id}`);
+          })
+          .catch((err) => {
+            setError("Ошибка при создании пользователя");
+            console.error("Ошибка регистрации:", err);
           });
+      })
+      .catch((err) => {
+        setError("Ошибка при получении списка пользователей");
+        console.error("Ошибка при запросе пользователей:", err);
       });
   };
 
   return (
-    <div className="flex relative flex-col gap-4 items-center text-white  justify-center min-h-screen">
-      <Link to={"/login"} className="absolute top-0 left-0 p-4 text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-8"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-          />
-        </svg>
-      </Link>
+    <div className="flex relative flex-col gap-4 items-center text-white justify-center min-h-screen">
       <h1 className="font-bold text-xl">Регистрация</h1>
 
       <div className="flex flex-col gap-4">
