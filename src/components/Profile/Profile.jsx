@@ -14,8 +14,8 @@ export default function Profile2() {
   const [error, setError] = useState(null); // Для отображения ошибок
   const navigate = useNavigate();
   const { id } = useParams(); // Получаем ID пользователя из URL
-  // const URL = "https://json-server-repo.onrender.com";
-  const URL = "http://localhost:3000";
+  const URL = "https://json-server-repo.onrender.com";
+  // const URL = "http://localhost:3000";
 
   useEffect(() => {
     // Проверка на наличие currentUser

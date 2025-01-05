@@ -9,7 +9,8 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const URL = "http://localhost:3000";
+  const URL = "https://json-server-repo.onrender.com";
+  // const URL = "http://localhost:3000";
 
   // Функция для обработки регистрации
   const handleRegister = () => {

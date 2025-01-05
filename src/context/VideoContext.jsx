@@ -1,8 +1,8 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 
-// const API_URL = "https://json-server-repo.onrender.com/videos";
-const URL_LOCAL = "http://localhost:3000/videos";
+const URL_LOCAL = "https://json-server-repo.onrender.com/videos";
+// const URL_LOCAL = "http://localhost:3000/videos";
 
 const VideoContext = createContext();
 
