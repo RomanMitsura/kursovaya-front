@@ -111,7 +111,10 @@ export default function Profile2() {
         <div className="pt-6 relative">
           {currentUser ? (
             <div className="flex flex-col gap-4 items-center text-white text-center">
-              <Link to={"/"} className="absolute top-4 left-0 p-4 text-white">
+              <Link
+                to={"/"}
+                className="absolute px-0 py-4 top-4 left-0 sm:p-4 text-white"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

@@ -58,7 +58,7 @@ export default function VideoPage() {
     <div className="flex relative justify-center items-center">
       <Link
         onClick={() => navigate(-1)}
-        className="absolute top-4 left-0 p-4 text-white"
+        className="absolute top-0 xl:top-4 left-0 py-4 xl:px-4 text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
